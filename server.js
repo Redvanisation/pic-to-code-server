@@ -25,11 +25,11 @@ app.use(cors());
     
       // Performs label detection on the image file
       const [result] = await client.documentTextDetection('https://i.pinimg.com/originals/2b/c4/4f/2bc44ff09685fd0c0dca65bc1b7e3011.jpg');
-      const labels = result.fullTextAnnotation;
-      console.log('Labels:');
+      const textObject = result.fullTextAnnotation;
+      // console.log('Labels:');
       // console.log(labels);
       // console.log(labels.text);
-      res.json(labels.text);
+      res.json(textObject);
       // console.log(process.env.PRIVATE_KEY)
       // labels.pages.forEach(label => console.log(label.text));
     } catch {
